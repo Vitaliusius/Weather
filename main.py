@@ -4,7 +4,7 @@ import requests
 LOCATION = ['cherepovets', 'london', 'svo']
 
 
-def weather(location):
+def get_weather(location):
     url_template = 'https://wttr.in/{}'
     url = url_template.format(location)
     payload = {
@@ -22,9 +22,10 @@ def weather(location):
 
 def main():
     for town in LOCATION:
-        response = weather(town)
+        response = get_weather(town)
         print(response.text)
 
 
 if __name__ == '__main__':
     main()
+
